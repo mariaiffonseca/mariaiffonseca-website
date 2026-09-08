@@ -40,9 +40,7 @@ section{padding:96px var(--container-padding);border-top:1px solid var(--color-d
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
 .skill-cat-title{font-family:var(--font-mono);font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:var(--tracking-label);color:var(--color-text-tertiary);margin-bottom:18px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
-.gh-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.gh-graph{display:grid;grid-template-columns:repeat(24,1fr);gap:4px}
-.gh-cell{aspect-ratio:1;border-radius:2px;background:var(--color-inset)}
+.gh-section{max-width:560px}
 .contact-section{text-align:center}
 .contact-section h2{font-size:var(--text-3xl);margin-bottom:32px}
 .contact-links{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
@@ -55,7 +53,7 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;color:var(--color-text)}
 .nav-toggle svg{width:22px;height:22px}
 @media (max-width: 860px){
-  .about-grid,.gh-section{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr}
   .featured-stats{grid-template-columns:1fr 1fr}
   .featured-viz{grid-template-columns:1fr}
   .other-grid{grid-template-columns:1fr}
@@ -73,14 +71,12 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
   }
   .nav-links.open{display:flex}
   .nav-links a{padding:12px 0}
-  .gh-graph{grid-template-columns:repeat(14,1fr)}
 }
 @media (max-width: 480px){
   .hero h1{font-size:var(--text-2xl)}
   .hero-sub{font-size:var(--text-base)}
   .hero-cta{gap:16px}
   .contact-links{gap:24px}
-  .gh-graph{grid-template-columns:repeat(10,1fr)}
   footer{flex-direction:column;align-items:flex-start;text-align:left}
 }
 </style>
@@ -188,7 +184,7 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
       <div class="stat"><div class="stat-value">247</div><div class="stat-label">Automated tests</div></div>
       <div class="stat"><div class="stat-value">4</div><div class="stat-label">Analytics modules</div></div>
       <div class="stat"><div class="stat-value">3</div><div class="stat-label">Engineering layers</div></div>
-      <div class="stat"><div class="stat-value">0</div><div class="stat-label">ML models used</div></div>
+      <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Rule-based &amp; explainable</div></div>
     </div>
     <div class="featured-viz">
       <img class="viz-shot" src="../../assets/projects/finance-analytics/overview.png" alt="Finance Analytics overview dashboard screenshot">
@@ -235,7 +231,7 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
   <div class="skills-grid">
     <div>
       <div class="skill-cat-title">Data Science</div>
-      <div class="skill-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">Matplotlib</span><span class="tag">Data Analysis</span><span class="tag">Machine Learning</span></div>
+      <div class="skill-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Data Analysis</span></div>
     </div>
     <div>
       <div class="skill-cat-title">Data</div>
@@ -247,20 +243,17 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
     </div>
     <div>
       <div class="skill-cat-title">Currently learning</div>
-      <div class="skill-tags"><span class="tag tag-accent">Machine Learning</span><span class="tag tag-accent">Statistics</span><span class="tag tag-accent">Model Evaluation</span><span class="tag tag-accent">FastAPI</span><span class="tag tag-accent">MLOps fundamentals</span></div>
+      <div class="skill-tags"><span class="tag tag-accent">Machine Learning</span><span class="tag tag-accent">Scikit-learn</span><span class="tag tag-accent">Statistics</span><span class="tag tag-accent">Model Evaluation</span><span class="tag tag-accent">FastAPI</span><span class="tag tag-accent">MLOps fundamentals</span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="gh-section">
-    <div>
-      <div class="section-label">GitHub</div>
-      <h2 style="font-size:var(--text-2xl);margin:14px 0 16px">Explore the work behind the projects.</h2>
-      <p style="color:var(--color-text-secondary);max-width:420px;margin-bottom:32px">Code, experiments, analysis and the process behind my projects.</p>
-      <a class="btn btn-primary" href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>View GitHub profile</a>
-    </div>
-    <div class="gh-graph" id="gh-graph" aria-hidden="true"></div>
+    <div class="section-label">GitHub</div>
+    <h2 style="font-size:var(--text-2xl);margin:14px 0 16px">Explore the work behind the projects.</h2>
+    <p style="color:var(--color-text-secondary);margin-bottom:32px">Code, experiments, analysis and the process behind my projects.</p>
+    <a class="btn btn-primary" href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>View GitHub profile</a>
   </div>
 </section>
 <script>
@@ -278,17 +271,6 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
       toggle.setAttribute('aria-expanded', 'false');
     });
   });
-})();
-(function(){
-  var g = document.getElementById('gh-graph');
-  if (!g) return;
-  for (var i = 0; i < 168; i++) {
-    var c = document.createElement('div');
-    c.className = 'gh-cell';
-    var l = (90 - Math.random() * 40).toFixed(0);
-    c.style.background = 'oklch(' + l + '% ' + (Math.random() > 0.6 ? '0.03 265' : '0.006 258') + ')';
-    g.appendChild(c);
-  }
 })();
 </script>
 
