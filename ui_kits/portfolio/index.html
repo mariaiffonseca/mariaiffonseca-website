@@ -23,6 +23,11 @@ section{padding:96px var(--container-padding);border-top:1px solid var(--color-d
 .explore-title{font-family:var(--font-mono);font-size:var(--text-2xs);text-transform:uppercase;letter-spacing:var(--tracking-label);color:var(--color-text-tertiary);margin-bottom:16px}
 .explore-list{display:flex;flex-direction:column;gap:10px}
 .explore-list span{font-size:var(--text-sm)}
+.exp-card{max-width:720px}
+.exp-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.exp-dates{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-tertiary);white-space:nowrap}
+.exp-list{margin:0;padding-left:20px;color:var(--color-text-secondary);font-size:var(--text-sm);display:flex;flex-direction:column;gap:8px}
+.exp-list li{line-height:var(--leading-relaxed)}
 .featured-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;margin-bottom:40px;flex-wrap:wrap}
 .featured-desc{max-width:560px;color:var(--color-text-secondary);font-size:var(--text-base)}
 .featured-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:40px}
@@ -90,6 +95,7 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
   <div class="nav-links" id="nav-links">
     <a href="#home" aria-current="page">Home</a>
     <a href="#about">About</a>
+    <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
@@ -128,6 +134,26 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
         <span>Statistical Analysis</span><span>Python</span><span>SQL</span>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-head">
+    <div class="section-label">Experience</div>
+    <h2>Six years in, still shipping.</h2>
+  </div>
+  <div class="card exp-card">
+    <div class="exp-head">
+      <div class="card-title">Software Engineer</div>
+      <div class="exp-dates">2020 — Present</div>
+    </div>
+    <ul class="exp-list">
+      <li>Build and ship Android apps in Kotlin, from the first estimate to the production release.</li>
+      <li>On some projects, sit with the client directly to work out what actually needs building — not just what's in the spec.</li>
+      <li>Test everything exhaustively before it ever reaches QA or the client — I'd rather find the bug than they would.</li>
+      <li>Also wrote a data-science thesis in Python, chasing the same curiosity that runs through the rest of this site.</li>
+    </ul>
+    <div class="card-tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Python</span></div>
   </div>
 </section>
 
