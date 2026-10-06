@@ -140,3 +140,12 @@ footer { max-width: var(--container-max); margin: 60px auto 0; padding: 24px var
   .dir-row .name { min-width: 170px; }
   .exp-dates { font-size: .8em; }
 }
+
+/* — view toggle (switches to the normal view) — */
+.view-toggle {
+  background: transparent; border: 1px solid var(--rule); color: var(--grey); border-radius: 2px;
+  padding: 5px 12px; font-size: .75rem; cursor: pointer; flex: none; white-space: nowrap;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.view-toggle:hover { border-color: var(--green); color: var(--green); }
+.view-toggle[aria-pressed='true'] { border-color: var(--green-dim); color: var(--green); }
