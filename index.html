@@ -1,30 +1,12 @@
 <!doctype html>
-<html lang="en" data-view="terminal">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Maria Fonseca — Software Engineer · Data Science · ML</title>
-<link id="css-terminal" rel="stylesheet" href="styles-terminal.css">
-<link id="css-normal" rel="stylesheet" href="styles-normal.css" disabled>
-<style>
-  /* Only one view is shown at a time; the active one is set on <html data-view>. */
-  html[data-view="terminal"] #view-normal,
-  html[data-view="normal"] #view-terminal { display: none; }
-</style>
-<script>
-  /* Runs before first paint so the stored view is applied without flashing the other one. */
-  (function(){
-    var view = 'terminal';
-    try { if (localStorage.getItem('portfolio-view') === 'normal') view = 'normal'; } catch (e) {}
-    document.documentElement.setAttribute('data-view', view);
-    document.getElementById('css-terminal').disabled = view !== 'terminal';
-    document.getElementById('css-normal').disabled = view !== 'normal';
-  })();
-</script>
+<link rel="stylesheet" href="styles-terminal.css">
 </head>
 <body>
-
-<div id="view-terminal">
 
 <div class="scanlines" aria-hidden="true"></div>
 
@@ -37,12 +19,12 @@
     <button type="button" data-cmd="skills">skills</button>
     <button type="button" data-cmd="contact">contact</button>
   </nav>
-  <button type="button" class="view-toggle" data-view-toggle aria-pressed="true">Terminal view: on</button>
+  <a class="view-toggle" href="normal.html">Normal view</a>
 </div>
 
 <main>
 
-  <section class="hero" id="term-home" data-section="home">
+  <section class="hero" id="home">
     <div id="boot"></div>
     <div class="prompt-live">
       <label for="cmd-input" class="visually-hidden">Terminal command input</label>
@@ -54,7 +36,7 @@
     <div class="hint">press any key, or use the commands above, to jump ahead — try "me", "projects", "skills", "contact"</div>
   </section>
 
-  <section id="term-about" data-section="about">
+  <section id="about">
     <div class="line"><span class="prompt">guest@maria-fonseca:~$&nbsp;</span><span class="cmd-text">cat about.md</span></div>
     <div class="out-block">
       <div class="comment-label"># About</div>
@@ -86,7 +68,7 @@
     </div>
   </section>
 
-  <section id="term-experience" data-section="experience">
+  <section id="experience">
     <div class="line"><span class="prompt">guest@maria-fonseca:~$&nbsp;</span><span class="cmd-text">cat experience.log</span></div>
     <div class="readme">
       <div class="comment-label"># Experience</div>
@@ -104,7 +86,7 @@
     </div>
   </section>
 
-  <section id="term-projects" data-section="projects">
+  <section id="projects">
     <div class="line"><span class="prompt">guest@maria-fonseca:~$&nbsp;</span><span class="cmd-text">ls projects/</span></div>
     <div class="dir-list">
       <div class="dir-row"><span class="name">finance-analytics/</span><span class="status">complete</span></div>
@@ -137,7 +119,7 @@
     </div>
   </section>
 
-  <section id="term-skills" data-section="skills">
+  <section id="skills">
     <div class="line"><span class="prompt">guest@maria-fonseca:~$&nbsp;</span><span class="cmd-text">cat skills.json</span></div>
     <div class="out-block">
       <div class="comment-label" style="margin-bottom:10px"># Skills</div>
@@ -159,7 +141,7 @@
     </div>
   </section>
 
-  <section id="term-contact" data-section="contact">
+  <section id="contact">
     <div class="line"><span class="prompt">guest@maria-fonseca:~$&nbsp;</span><span class="cmd-text">cat contact.txt</span></div>
     <div class="out-block">
       <div class="comment-label" style="margin-bottom:10px"># Contact</div>
@@ -176,274 +158,14 @@
   <div class="foot-meta">© 2026 Maria Fonseca</div>
 </footer>
 
-</div>
-
-<div id="view-normal">
-
-<nav class="nav">
-  <span class="nav-brand">Maria Fonseca</span>
-  <div class="nav-end">
-    <button class="view-toggle" type="button" data-view-toggle aria-pressed="false">Terminal view: off</button>
-    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <div class="nav-links" id="nav-links">
-      <a href="#home" aria-current="page">Home</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero dot-field" id="home" data-section="home">
-  <div class="hero-inner">
-    <div class="section-label hero-kicker">Software Engineer · Data Science · Machine Learning</div>
-    <h1>Maria Fonseca</h1>
-    <div class="hero-sub">Software Engineer exploring Data Science &amp; Machine Learning.</div>
-    <div class="hero-body">I build data-driven applications, explore patterns in data, and turn machine learning ideas into practical software.</div>
-    <div class="hero-cta">
-      <a class="btn btn-accent" href="#projects">View my projects</a>
-      <a class="social-link" href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>GitHub</a>
-      <a class="social-link" href="https://www.linkedin.com/in/mariaiffonseca/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>LinkedIn</a>
-    </div>
-  </div>
-</header>
-
-<section id="about" data-section="about">
-  <div class="section-head">
-    <div class="section-label">About</div>
-    <h2>From shipping software to reading data.</h2>
-  </div>
-  <div class="about-grid">
-    <div class="about-body">
-      <p>I started as a software engineer building mobile applications, focused on shipping reliable, well-structured products. Over time, the questions I found most interesting moved upstream — not just how a feature works, but what the data behind it says.</p>
-      <p>That curiosity led me into data science and machine learning. I enjoy exploratory data analysis: digging through a dataset to find patterns, anomalies, and the small inconsistencies that usually matter most.</p>
-      <p>I'm not interested in models for their own sake. I care about end-to-end products — the full path from raw data to something a user can actually open and use.</p>
-    </div>
-    <div class="explore-box">
-      <div class="explore-title">Currently exploring</div>
-      <div class="explore-list">
-        <span>Data Science</span><span>Machine Learning</span><span>Data Visualization</span>
-        <span>Statistical Analysis</span><span>Python</span><span>SQL</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience" data-section="experience">
-  <div class="section-head">
-    <div class="section-label">Experience</div>
-    <h2>Six years in, still shipping.</h2>
-  </div>
-  <div class="card exp-card">
-    <div class="exp-head">
-      <div class="card-title">Software Engineer</div>
-      <div class="exp-dates">2020 — Present</div>
-    </div>
-    <ul class="exp-list">
-      <li>Build and ship Android apps in Kotlin, from the first estimate to the production release.</li>
-      <li>On some projects, sit with the client directly to work out what actually needs building — not just what's in the spec.</li>
-      <li>Test everything exhaustively before it ever reaches QA or the client — I'd rather find the bug than they would.</li>
-      <li>Also wrote a data-science thesis in Python, chasing the same curiosity that runs through the rest of this site.</li>
-    </ul>
-    <div class="card-tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Python</span></div>
-  </div>
-</section>
-
-<section id="projects" data-section="projects">
-  <div class="section-head">
-    <div class="section-label">Featured project</div>
-    <h2>Finance Analytics</h2>
-  </div>
-  <div class="card card-featured">
-    <div class="featured-top">
-      <p class="featured-desc">A personal analytics platform that turns a CSV export of bank transactions into spending trends, anomaly detection, recurring-subscription detection, and explainable insights — processed and stored entirely on-device, with every threshold documented and evidence-motivated rather than fitted to a model.</p>
-      <div style="display:flex;gap:16px;flex-shrink:0">
-        <a class="btn btn-accent" href="https://github.com/mariaiffonseca/finance-analytics" target="_blank" rel="noreferrer">View on GitHub</a>
-      </div>
-    </div>
-    <div class="pipeline">
-      <div class="pipeline-step"><span class="pipeline-index">01</span><span class="pipeline-label">CSV Import</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">02</span><span class="pipeline-label">Enrichment</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">03</span><span class="pipeline-label">Anomaly Detection</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">04</span><span class="pipeline-label">Recurring Detection</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">05</span><span class="pipeline-label">Insights Engine</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">06</span><span class="pipeline-label">FastAPI</span></div>
-      <span class="pipeline-arrow">→</span>
-      <div class="pipeline-step"><span class="pipeline-index">07</span><span class="pipeline-label">Android App</span></div>
-    </div>
-    <div class="featured-stats">
-      <div class="stat"><div class="stat-value">247</div><div class="stat-label">Automated tests</div></div>
-      <div class="stat"><div class="stat-value">4</div><div class="stat-label">Analytics modules</div></div>
-      <div class="stat"><div class="stat-value">3</div><div class="stat-label">Engineering layers</div></div>
-      <div class="stat"><div class="stat-value">100%</div><div class="stat-label">Rule-based &amp; explainable</div></div>
-    </div>
-    <div class="featured-viz">
-      <img class="viz-shot" src="assets/projects/finance-analytics/overview.png" alt="Finance Analytics overview dashboard screenshot">
-      <img class="viz-shot" src="assets/projects/finance-analytics/insights.png" alt="Finance Analytics insights screen screenshot">
-      <img class="viz-shot" src="assets/projects/finance-analytics/transactions.png" alt="Finance Analytics transactions screen screenshot">
-    </div>
-    <div class="card-tags">
-      <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span>
-      <span class="tag">FastAPI</span><span class="tag">Python</span><span class="tag">Pandas</span>
-      <span class="tag">Room</span><span class="tag">pytest</span>
-    </div>
-  </div>
-
-  <div class="section-head" style="margin-top:80px">
-    <div class="section-label">Coming soon</div>
-    <h2>What I'm building next.</h2>
-  </div>
-  <div class="card coming-soon-card">
-    <div class="card-title">Event Impact Analytics<span class="coming-soon-badge">In progress</span></div>
-    <div class="card-body">An observational study measuring whether NYC Yankees home games shift taxi activity around the stadium — built on a full year of NYC TLC Yellow Taxi trip records, taxi zone geometry, and the Yankees' 2019 schedule, framed around association rather than causal claims until the evidence supports more. Currently in the data-acquisition and validation stage: schema, quality and coverage checks on the taxi dataset are underway before any modeling begins.</div>
-    <div class="card-tags"><span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">PyArrow</span><span class="tag">pytest</span></div>
-  </div>
-</section>
-
-<section>
-  <div class="section-head">
-    <div class="section-label">Data science journey</div>
-    <h2>How I got here.</h2>
-  </div>
-  <div class="journey-wrap">
-    <div class="journey-step"><div class="journey-rail"><div class="journey-dot"></div><div class="journey-line"></div></div><div class="journey-label">Software Engineering</div></div>
-    <div class="journey-step"><div class="journey-rail"><div class="journey-dot"></div><div class="journey-line"></div></div><div class="journey-label">Python &amp; Data Analysis</div></div>
-    <div class="journey-step"><div class="journey-rail"><div class="journey-dot"></div><div class="journey-line"></div></div><div class="journey-label">Exploratory Data Analysis</div></div>
-    <div class="journey-step"><div class="journey-rail"><div class="journey-dot"></div><div class="journey-line"></div></div><div class="journey-label">Machine Learning</div></div>
-    <div class="journey-step"><div class="journey-rail"><div class="journey-dot journey-dot-current"></div></div><div class="journey-label journey-label-current">End-to-End ML Applications</div></div>
-  </div>
-</section>
-
-<section id="skills" data-section="skills">
-  <div class="section-head">
-    <div class="section-label">Skills</div>
-    <h2>Tools &amp; areas of focus.</h2>
-  </div>
-  <div class="skills-grid">
-    <div>
-      <div class="skill-cat-title">Data Science</div>
-      <div class="skill-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">SQL</span><span class="tag">EDA</span><span class="tag">Data Cleaning</span><span class="tag">Data Visualization</span><span class="tag">Feature Engineering</span></div>
-    </div>
-    <div>
-      <div class="skill-cat-title">Software Engineering</div>
-      <div class="skill-tags"><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Jetpack Compose</span><span class="tag">Git</span><span class="tag">REST APIs</span></div>
-    </div>
-    <div>
-      <div class="skill-cat-title">Currently learning</div>
-      <div class="skill-tags"><span class="tag tag-accent">Machine Learning</span><span class="tag tag-accent">Scikit-learn</span><span class="tag tag-accent">Statistics</span><span class="tag tag-accent">Model Evaluation</span><span class="tag tag-accent">FastAPI</span><span class="tag tag-accent">MLOps fundamentals</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="gh-section">
-    <div class="section-label">GitHub</div>
-    <h2 style="font-size:var(--text-2xl);margin:14px 0 16px">Explore the work behind the projects.</h2>
-    <p style="color:var(--color-text-secondary);margin-bottom:32px">Code, experiments, analysis and the process behind my projects.</p>
-    <a class="btn btn-primary" href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>View GitHub profile</a>
-  </div>
-</section>
-
-<section class="contact-section" id="contact" data-section="contact">
-  <div class="section-label" style="justify-content:center">Contact</div>
-  <h2>Let's connect.</h2>
-  <div class="contact-links">
-    <a class="social-link" href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>GitHub</a>
-    <a class="social-link" href="https://www.linkedin.com/in/mariaiffonseca/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>LinkedIn</a>
-    <a class="social-link" href="mailto:fonsecamariainesf@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>Email</a>
-  </div>
-</section>
-
-<footer>
-  <div>
-    <div class="foot-brand">Maria Fonseca</div>
-    <div class="foot-sub">Software Engineering · Data Science · Machine Learning</div>
-  </div>
-  <div class="foot-links">
-    <a href="https://github.com/mariaiffonseca" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mariaiffonseca/" target="_blank" rel="noreferrer">LinkedIn</a><a href="mailto:fonsecamariainesf@gmail.com">Email</a>
-  </div>
-  <div class="copyright">© 2026 Maria Fonseca</div>
-</footer>
-
-</div>
-
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var root = document.documentElement;
-  var cssTerminal = document.getElementById('css-terminal');
-  var cssNormal = document.getElementById('css-normal');
-  var toggles = document.querySelectorAll('[data-view-toggle]');
-  var SECTIONS = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
-  var VIEW_KEY = 'portfolio-view';
-  var BOOT_KEY = 'portfolio-terminal-booted';
-
-  function storeGet(name, key){ try { return window[name].getItem(key); } catch (e) { return null; } }
-  function storeSet(name, key, value){ try { window[name].setItem(key, value); } catch (e) {} }
-
-  function applyView(name){
-    var terminal = name === 'terminal';
-    root.setAttribute('data-view', name);
-    cssTerminal.disabled = !terminal;
-    cssNormal.disabled = terminal;
-    Array.prototype.forEach.call(toggles, function(b){
-      b.setAttribute('aria-pressed', terminal ? 'true' : 'false');
-      b.textContent = 'Terminal view: ' + (terminal ? 'on' : 'off');
-    });
-  }
-
-  function sectionIn(view, name){
-    return document.querySelector('#view-' + view + ' [data-section="' + name + '"]');
-  }
-
-  // The last section whose top has reached the top of the viewport, so the switch can keep the reader in place.
-  function sectionAtTop(view){
-    var found = null;
-    Array.prototype.forEach.call(document.querySelectorAll('#view-' + view + ' [data-section]'), function(s){
-      if (s.getBoundingClientRect().top <= 120) found = s;
-    });
-    return found;
-  }
-
-  // The boot sequence plays once per session, on the first entry into the terminal view.
+  var boot = document.getElementById('boot');
+  var input = document.getElementById('cmd-input');
+  var feedback = document.getElementById('cmd-feedback');
   var skipped = reduced;
-  var bootStarted = false;
-
-  function startBoot(){
-    if (bootStarted) return;
-    bootStarted = true;
-    if (storeGet('sessionStorage', BOOT_KEY) === '1') skipped = true;
-    storeSet('sessionStorage', BOOT_KEY, '1');
-    typeAll(bootLines, function(){});
-  }
-
-  function switchView(next){
-    var current = root.getAttribute('data-view');
-    if (next === current) return;
-    var from = sectionAtTop(current);
-    var name = from && from.getAttribute('data-section');
-    var before = from ? from.getBoundingClientRect().top : 0;
-    applyView(next);
-    storeSet('localStorage', VIEW_KEY, next);
-    if (next === 'terminal') startBoot();
-    var to = name && sectionIn(next, name);
-    if (to) window.scrollTo({ top: window.scrollY + to.getBoundingClientRect().top - before, behavior: 'instant' });
-  }
-
-  Array.prototype.forEach.call(toggles, function(b){
-    b.addEventListener('click', function(){
-      switchView(root.getAttribute('data-view') === 'terminal' ? 'normal' : 'terminal');
-    });
-  });
+  var typeSpeed = 20;
 
   var bootLines = [
     {type:'cmd', text:'whoami'},
@@ -454,11 +176,6 @@
     {type:'cmd', text:'cat mission.txt'},
     {type:'out', text:'I build data-driven applications, explore patterns in data, and turn machine learning ideas into practical software.'}
   ];
-
-  var boot = document.getElementById('boot');
-  var input = document.getElementById('cmd-input');
-  var feedback = document.getElementById('cmd-feedback');
-  var typeSpeed = 20;
 
   function renderSkeleton(line){
     var div = document.createElement('div');
@@ -511,17 +228,19 @@
     next();
   }
 
-  function skip(){ if (bootStarted) skipped = true; }
+  function skip(){ skipped = true; }
   document.addEventListener('keydown', function(e){
     if(document.activeElement === input) return;
     skip();
   });
-  boot.addEventListener('click', skip);
+  document.getElementById('boot').addEventListener('click', skip);
   input.addEventListener('focus', skip);
 
+  typeAll(bootLines, function(){});
+
   var targets = {
-    me:'#term-about', about:'#term-about', home:'#term-home', whoami:'#term-home',
-    projects:'#term-projects', skills:'#term-skills', contact:'#term-contact'
+    me:'#about', about:'#about', home:'#home', whoami:'#home',
+    projects:'#projects', skills:'#skills', contact:'#contact'
   };
 
   function runCommand(raw){
@@ -534,7 +253,7 @@
     }
     if(targets[cmd]){
       feedback.textContent = '';
-      var el = document.querySelector('#view-terminal ' + targets[cmd]);
+      var el = document.querySelector(targets[cmd]);
       if(el) el.scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'start'});
     } else {
       feedback.textContent = 'command not found: ' + cmd + ' — type help';
@@ -550,34 +269,6 @@
 
   document.querySelectorAll('.term-jump button').forEach(function(b){
     b.addEventListener('click', function(){ runCommand(b.getAttribute('data-cmd')); });
-  });
-
-  // Initial state: the view chosen by the head script, its boot if it is the terminal, and any #section deep link.
-  var view = root.getAttribute('data-view');
-  applyView(view);
-  if (view === 'terminal') startBoot();
-  var hash = window.location.hash.slice(1);
-  if (SECTIONS.indexOf(hash) !== -1) {
-    var deepLink = sectionIn(view, hash);
-    if (deepLink) deepLink.scrollIntoView({ block: 'start' });
-  }
-})();
-</script>
-
-<script>
-(function(){
-  var toggle = document.getElementById('nav-toggle');
-  var links = document.getElementById('nav-links');
-  if (!toggle || !links) return;
-  toggle.addEventListener('click', function(){
-    var open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  Array.prototype.forEach.call(links.querySelectorAll('a'), function(a){
-    a.addEventListener('click', function(){
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
   });
 })();
 </script>

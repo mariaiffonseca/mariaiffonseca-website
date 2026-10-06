@@ -148,4 +148,3 @@ footer { max-width: var(--container-max); margin: 60px auto 0; padding: 24px var
   transition: border-color .15s, color .15s, background .15s;
 }
 .view-toggle:hover { border-color: var(--green); color: var(--green); }
-.view-toggle[aria-pressed='true'] { border-color: var(--green-dim); color: var(--green); }

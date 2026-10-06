@@ -281,6 +281,5 @@ footer .foot-links a{font-size:var(--text-sm);color:var(--color-text-secondary)}
   transition: color var(--duration-fast) var(--ease-standard), background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
 }
 .view-toggle:hover { color: var(--color-text); background: var(--color-inset); }
-.view-toggle[aria-pressed='true'] { color: var(--color-accent); border-color: var(--color-accent-soft-border); background: var(--color-accent-soft); }
 @media (max-width: 700px) { .nav-end { gap: var(--space-4); } }
 @media (max-width: 480px) { .view-toggle { font-size: var(--text-2xs); padding: 6px 10px; } }
